@@ -16,7 +16,7 @@
     @if (HttpContext.Current.Session["_IdUsuario"] != null)
     {
 
-        <nav class="ui inverted top fixed menu con-color" id="main-menu">
+        <nav class="ui inverted top fixed menu blue" id="main-menu">
             <a href="@Url.Action("Index", "Home", new { area = "" })" class="header item">
                 <i class="home icon"></i>
             </a>
@@ -27,8 +27,8 @@
         </nav>
         <div id="wrapper">
             <aside id="main-sidebar" class="ui left vertical @(ViewBag.SidebarActive != null ? ViewBag.Sidebar : "") menu sidebar" style="font-size: larger;">
-                <img class="ui medium fluid centered image" style="margin-left:-1px;" src="~/Content/Imagenes/LogoInicio-03.jpg" alt="Logo" />
-                <div class="item">
+                @*<img class="ui medium fluid centered image" style="margin-left:-1px;" src="~/Content/Imagenes/LogoInicio-03.jpg" alt="Logo" />*@
+                @*<div class="item">
                     <div class=" dividing header">
                     </div>
 
@@ -78,56 +78,41 @@
                                 <a class="item" href="@Url.Action("Listar", "TerminosVenta", new { area = "" })">
                                     Sales Terms
                                 </a>
-                                
 
-                                <a class="item" href="@Url.Action("ListarSecuencia", "LastNumber", new { area = "" })">
-                                    Sequence
-                                </a>
-                                @*<a class="item" href="@Url.Action("ListarSecuencia", "LastNumber", new { area = "" })">
-            Last Number
-        </a>*@
+                            
 
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
 
-                <div class="item">
+                @*<div class="item">
                     <div class=" dividing header">
                     </div>
-                    @*<div class=" dividing header">
-                        Customers
-                    </div>*@
                     <div class="menu">
                         <div class="ui dropdown item" tabindex="0">
-                            
                             <FONT SIZE=4>Customers</FONT>
                             <i class="dropdown icon"></i>
                             <div class="menu transition hidden" tabindex="-1">
-
                                 @Html.ActionLink("Customer Group", "ListarGrupoClientes", "GrupoClientes", new { area = "" }, new { @class = "item" })
                                 @Html.ActionLink("Consignee", "ListarConsignee", "Clientes", new { area = "" }, new { @class = "item" })
                                 @Html.ActionLink("Notify", "ListarNotificadores", "Notify", new { area = "" }, new { @class = "item" })
-                                @*@Html.ActionLink("Datos de Facturacion", "ListarDatosFacturacion", "Clientes", new { area = "" }, new { @class = "item" })*@
                                 @Html.ActionLink("Final Client", "ListarClienteFinal", "ClienteFinal", new { area = "" }, new { @class = "item" })
-                                @* @Html.ActionLink("Otros Exportadores", "ListarBancos", "Bancos", new { area = "" }, new { @class = "item" })*@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
 
 
-                <div class="item">
+                @*<div class="item">
                     <div class=" dividing header">
                     </div>
-                    @*<div class=" dividing header">
-                        Boxes
-                    </div>*@
+
                     <div class="menu">
                         <div class="ui dropdown item" tabindex="0">
-                         
+
                             <FONT SIZE=4>Boxes</FONT>
                             <i class="dropdown icon"></i>
                             <div class="menu transition hidden" tabindex="-1">
@@ -137,24 +122,22 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
 
                 <div class="item">
                     <div class=" dividing header">
                     </div>
-                    @*<div class=" dividing header">
-                        Files
-                    </div>*@
+  
                     <div class="menu">
                         <div class="ui dropdown item" tabindex="0">
-                            
+
                             <FONT SIZE=4>Files</FONT>
                             <i class="dropdown icon"></i>
                             <div class="menu transition hidden" tabindex="-1">
                                 @Html.ActionLink("Load Base", "Registrar", "Base", new { area = "" }, new { @class = "item" })
 
-                                @*@Html.ActionLink("Charge Cost", "Registrar", "BaseCostos", new { area = "" }, new { @class = "item" })*@
+
                             </div>
                         </div>
                     </div>
@@ -162,76 +145,21 @@
 
 
                 @*<div class="item">
-                        <div class=" dividing header">
-                        </div>
-                        <div class=" dividing header">
-                            Files
-                        </div>
-
-                        <div class="menu">
-                            @Html.ActionLink("Load Base", "Registrar", "Base", new { area = "" }, new { @class = "item" })
-
-                            @Html.ActionLink("Charge Cost", "Registrar", "BaseCostos", new { area = "" }, new { @class = "item" })
-                        </div>
-                    </div>*@
-
-
-
-                <div class="item">
                     <div class=" dividing header">
                     </div>
-                    @*<div class=" dividing header">
-                        Sales
-                    </div>*@
+  
                     <div class="menu">
                         <div class="ui dropdown item" tabindex="0">
-                            
+
                             <FONT SIZE=4>Sales</FONT>
                             <i class="dropdown icon"></i>
                             <div class="menu transition hidden" tabindex="-1">
                                 @Html.ActionLink("Sale Order", "ListarGrupos", "OrdenVenta", new { area = "" }, new { @class = "item" })
                                 @Html.ActionLink("Open Invoice", "ListarFacturasGeneradas", "OrdenVenta", new { area = "" }, new { @class = "item" })
-
-
-                                @*@Html.ActionLink("Order", "ListarOrdenes", "OrdenVenta", new { area = "" }, new { @class = "item" })
-        @Html.ActionLink("Sale Order", "ListarOrdenVenta", "OrdenVenta", new { area = "" }, new { @class = "item" })*@
-                                @*@Html.ActionLink("Pre Invoices", "GenerarFactura", "OrdenVenta", new { area = "" }, new { @class = "item" })*@
-
-                                @*@Html.ActionLink("Pagos", "ListarBancos", "Bancos", new { area = "" }, new { @class = "item" })
-        @Html.ActionLink("Tracking", "ListarBancos", "Bancos", new { area = "" }, new { @class = "item" })
-        @Html.ActionLink("FOT", "ListarBancos", "Bancos", new { area = "" }, new { @class = "item" })
-        @Html.ActionLink("Invoice Control", "ListarBancos", "Bancos", new { area = "" }, new { @class = "item" })*@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                @*<div class="item">
-                        <div class=" dividing header">
-                        </div>
-                        <div class=" dividing header">
-                            Reportes
-                        </div>
-
-                        <div class="menu">
-                            @Html.ActionLink("Costos", "ReportCostos", "Costos", new { area = "" }, new { @class = "item" })
-                        </div>
-                    </div>*@
-
-                @*<div class="item">
-                        <div class=" dividing header">
-                        </div>
-                        <div class=" dividing header">
-                            Pagos
-                        </div>
-
-                        <div class="menu">
-                            @Html.ActionLink("Pagos", "Listar", "OrdenPago", new { area = "" }, new { @class = "item" })
-                            @Html.ActionLink("Pagos-Facturas", "ListarLiquidaciones", "LiquidacionOrdenVenta", new { area = "" }, new { @class = "item" })
-                            @Html.ActionLink("Aprobar Pagos", "ListarPagosCerrados", "Pagos", new { area = "" }, new { @class = "item" })
-                        </div>
-                    </div>*@
+                </div>*@
             </aside>
 
 

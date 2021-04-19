@@ -17,14 +17,16 @@ namespace FDLDATA
         //{
         //}
 
-        //public Context() : base("DefaultConnection")
-        //{
-        //}
+        public Context() : base("DefaultConnection")
+        {
+        }
 
         // public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Cat_Usuarios> Cat_Usuarios { get; set; }
-   
-   
+        public virtual DbSet<Cat_Usuarios> Cat_Usuarios { get; set; }       
+        public virtual DbSet<NombresFilasTrack> NombresFilasTracks { get; set; }
+        public virtual DbSet<ArchivoTracking> Archivos { get; set; }
+        public virtual DbSet<FilasTracking> FilasTrackings { get; set; }
+
         public new static Context Create()
         {
             return new Context();
@@ -34,6 +36,10 @@ namespace FDLDATA
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new Cat_UsuariosConfig());
+            modelBuilder.Configurations.Add(new NombresFilasTrackConfig());
+
+            modelBuilder.Configurations.Add(new ArchivoTracingConfig());
+            modelBuilder.Configurations.Add(new FilasTrackingConfig());
         }
     }
 }

@@ -19,5 +19,43 @@ namespace AgricolaData.Configuration
     }
 
 
+    public class NombresFilasTrackConfig : EntityTypeConfiguration<NombresFilasTrack>
+    {
+        public NombresFilasTrackConfig()
+        {
+            ToTable("NombresFilasTrack", "BAS");
+            HasKey(x => x.IdNombreFila);
+        }
+    }
+
+
+    public class ArchivoTracingConfig : EntityTypeConfiguration<ArchivoTracking>
+    {
+        public ArchivoTracingConfig()
+        {
+            ToTable("ArchivoTracking", "BAS");
+            HasKey(x => x.IdArchivoTracking);
+        }
+    }
+
+    public class FilasTrackingConfig : EntityTypeConfiguration<FilasTracking>
+    {
+        public FilasTrackingConfig()
+        {
+            ToTable("FilasTracking", "BAS");
+            HasKey(x => x.IdFilaTracking);
+
+            HasRequired(x => x.ArchivoBase).WithMany().HasForeignKey(c => c.IdArchivo).WillCascadeOnDelete(false);
+
+
+
+            Property(x => x.TOTAL_PESO_BRUTO)
+                .HasPrecision(18, 5);
+
+            Property(x => x.TOTAL_PESO_NETO)
+                .HasPrecision(18, 5);
+        }
+    }
+
 
 }
