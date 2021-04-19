@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNet.Identity
+<div class="right menu">
+    @if (HttpContext.Current.Session["_IdUsuario"] != null)
+    {
+        <div class="ui dropdown item">
+            <i class="user alternate circle icon"></i> Bienvenido, @HttpContext.Current.Session["_UserName"]
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                @Html.ActionLink("Usuarios", "ListarUsuarios", "Seguridad", new { area = "" }, new { @class = "item" })
+                @Html.ActionLink("Roles", "ListarRoles", "Seguridad", new { area = "" }, new { @class = "item" })
+
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="item">
+                    <i class="arrow alternate circle right icon"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+        using (Html.BeginForm("LogOff", "Seguridad", FormMethod.Post, new { id = "logoutForm", @class = "hidden" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+    }
+    else
+    {
+        @Html.ActionLink("Iniciar Sesión", "Login", "Seguridad", htmlAttributes: new { id = "loginLink", @class = "item" })
+    }
+</div>
+

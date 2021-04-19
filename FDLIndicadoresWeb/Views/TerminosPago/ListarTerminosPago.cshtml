@@ -1,0 +1,94 @@
+﻿@model AgricolaData.ViewModel.ListarTerminosPagoViewModel
+
+
+@{ ViewBag.Title = "Listar Terminos Pago"; }
+
+
+@using (Html.BeginForm("ListarTerminosPago", "TerminosPago", FormMethod.Get, new { @class = "ui row" }))
+{
+    <div class="sixteen wide column" style="padding: 35px">
+        <div class="ui menu">
+            <h2>@ViewBag.Title</h2>
+        </div>
+
+
+        @*@Html.HiddenFor(m => m.ID)
+            @Html.HiddenFor(m => m.DIA)
+            @Html.HiddenFor(m => m.MES)
+            @Html.HiddenFor(m => m.ANIO)*@
+
+
+
+        <div class="ui row">
+            <div class="ui six wide column">
+                <div class="ui raised segment form">
+                    <div class="fields">
+
+                    </div>
+                    <div class="fields">
+                        <div class="item">
+                            <a href="@Url.Action("Registrar" )" class="ui primary green icon button">
+                                <i class="plus icon"></i> Agregar Termino de Pago
+                            </a>
+
+                        </div>
+
+
+                        @*<div class="field">
+                                <button type="submit" class="ui primary icon button">
+                                    <i class="filter icon"></i> Buscar
+                                </button>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui raised segments">
+
+
+            <div class="ui bottom attached raised segment">
+
+                <table class="ui small selectable celled table center aligned datatable">
+                    <thead>
+                        <tr class="centered">
+
+                            <th>@Html.DisplayNameFor(model => model.TerminosPago[0].Codigo)</th>
+                            <th>@Html.DisplayNameFor(model => model.TerminosPago[0].Nombre)</th>
+                            @*<th>@Html.DisplayNameFor(model => model.TerminosPago[0].Descripcion)</th>*@
+                    
+
+                            <th>Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.TerminosPago)
+                        {
+                            <tr class="centered">
+
+                                <td>@item.Codigo</td>
+                                <td>@item.Nombre</td>
+                                @*<td>@item.Descripcion</td>*@
+
+                                <td>
+                                    <div class="ui tiny buttons">
+                                        <a href="@Url.Action("Editar", new {IdPaymentTerms = item.IdPaymentTerms})" class="ui tiny green icon button">
+                                            <i class="edit icon"></i> Editar
+                                        </a>
+
+                                        <a href="@Url.Action("Eliminar", new {IdPaymentTerms = item.IdPaymentTerms})" class="ui tiny red icon button">
+                                            <i class="trash icon"></i> Eliminar
+                                        </a>
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

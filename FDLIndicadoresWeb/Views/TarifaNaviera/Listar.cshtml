@@ -1,0 +1,68 @@
+﻿@model AgricolaData.ViewModel.ListarTarifasNavierasViewModel
+
+
+@{ ViewBag.Title = "Listar Tarifas"; }
+
+
+@using (Html.BeginForm("Listar", "TarifaNaviera", FormMethod.Get, new { @class = "ui row" }))
+{
+    <div class="sixteen wide column" style="padding: 35px">
+        <div class="ui row">
+            <div class="ui six wide column">
+                <div class="ui raised segment form">
+                    <div class="fields">
+
+                    </div>
+                    <div class="fields">
+                        <div class="item">
+                            <a href="@Url.Action("Registrar")" class="ui primary green icon button">
+                                <i class="plus icon"></i> Registrar Tarifa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui raised segments">
+            <div class="ui menu">
+                <h2>@ViewBag.Title</h2>
+            </div>
+
+            <div class="ui bottom attached raised segment">
+                <table class="ui small selectable celled table center aligned datatable">
+                    <thead>
+                        <tr class="centered">
+                            <th>@Html.DisplayNameFor(model => model.Tarifas[0].NombreNaviera)</th>
+                            <th>@Html.DisplayNameFor(model => model.Tarifas[0].NombrePuerto)</th>
+                            <th>@Html.DisplayNameFor(model => model.Tarifas[0].NombrePais)</th>
+
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Tarifas)
+                        {
+                            <tr class="centered">
+                                <td>@item.NombreNaviera</td>
+                                <td>@item.NombrePuerto</td>
+                                <td>@item.NombrePais</td>
+                                <td>
+                                    <div class="ui tiny buttons">
+                                        <a href="@Url.Action("Editar", new {IdTarifaNaviera = item.IdTarifaNaviera})" class="ui tiny green icon button">
+                                            <i class="edit icon"></i> Editar
+                                        </a>
+
+                                        <a href="@Url.Action("Eliminar", new {IdTarifaNaviera = item.IdTarifaNaviera})" class="ui tiny red icon button">
+                                            <i class="trash icon"></i> Eliminar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,49 @@
+﻿@model AgricolaData.ViewModel.ItemTerminosPagoViewModel
+@{
+    ViewBag.Title = "Editar Terminos de Pago";
+}
+
+
+
+@using (Html.BeginForm("Editar", "TerminosPago", FormMethod.Post, new { @class = "" }))
+{
+    <div class="ui row">
+        <div class="ui six wide column">
+            @Html.HiddenFor(m => m.IdPaymentTerms)
+            <div class="ui raised segment form">
+                <div class="ui raised segment form">
+                    <div class="ui menu">
+                        <h1>@ViewBag.Title</h1>
+                    </div>
+
+                    <div class="tree fields">
+                        <div class="field">
+                            @Html.LabelFor(model => model.Codigo)
+                            @Html.TextBoxFor(model => model.Codigo)
+                            @Html.ValidationMessageFor(model => model.Codigo)
+                        </div>
+
+
+                        <div class="field">
+                            @Html.LabelFor(model => model.Nombre)
+                            @Html.TextBoxFor(model => model.Nombre)
+                            @Html.ValidationMessageFor(model => model.Nombre)
+                        </div>
+
+                        <div class="field">
+                            @Html.LabelFor(model => model.Descripcion)
+                            @Html.TextBoxFor(model => model.Descripcion)
+                            @Html.ValidationMessageFor(model => model.Descripcion)
+                        </div>
+                    </div>
+                </div>
+                @Html.ActionLink("Regresar", "ListarTerminosPago", "TerminosPago", null, new { @class = "ui button" })
+                <button type="submit" class="ui primary icon button">
+                    <i class="save icon"></i> Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+}

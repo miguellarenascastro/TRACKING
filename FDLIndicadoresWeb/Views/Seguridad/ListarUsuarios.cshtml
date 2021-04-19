@@ -1,0 +1,91 @@
+﻿@model AgricolaData.ViewModel.ListarUsuariosViewModel
+
+
+@{ ViewBag.Title = "Haciendas"; }
+@using (Html.BeginForm("ListarUsuarios", "Seguridad", FormMethod.Get, new { @class = "ui row" }))
+{
+    <div class="sixteen wide column" style="padding: 35px">
+        @*<div class="ui menu">
+                <h2>@ViewBag.Title</h2>
+            </div>*@
+
+        @*@Html.HiddenFor(m => m.Haciendas)*@
+
+        <div class="ui raised segments">
+            <div class="ui menu">
+                <div class="item">
+                    Empleados
+                </div>
+                @*<div class="item">
+                        <div class="ui calendar">
+                            <div class="ui input left icon" style="padding-right:-15px !important;">
+                                <i class="calendar icon"></i>
+                                @Html.TextBoxFor(model => model.Desde, "{00:yyyy-MM-dd}", new { id = "Desde", @class = "date-picker", @Style = "margin-right:-75px !important;" })
+                            </div>
+                        </div>
+                        <a href="~/Views/Pedidos/RecepcionContenedor.cshtml"></a>
+                    </div>
+                    <div class="item">
+                        <div class="ui calendar">
+                            <div class="ui input left icon">
+                                <i class="calendar icon"></i>
+                                @Html.TextBoxFor(model => model.Hasta, "{00:yyyy-MM-dd}", new { id = "Hasta", @class = "date-picker", @Style = "margin-right:-75px !important;" })
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="item">
+                    <a href="@Url.Action("RegistrarUsuario")" class="ui tiny green icon button">
+                        <i class="plus icon"></i> Registrar Usuario
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="ui bottom attached raised segment">
+
+                <table class="ui small selectable celled table center aligned datatable">
+                    <thead>
+                        <tr class="centered">
+
+                            <th>@Html.DisplayNameFor(model => model.Usuarios[0].Nombres)</th>
+                            <th>@Html.DisplayNameFor(model => model.Usuarios[0].Apellidos)</th>
+                            <th>@Html.DisplayNameFor(model => model.Usuarios[0].Username)</th>
+                            <th>@Html.DisplayNameFor(model => model.Usuarios[0].Identificacion)</th>
+
+                            <th>Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Usuarios)
+                        {
+                            <tr class="centered">
+
+                                <td>@item.Nombres</td>
+                                <td>@item.Apellidos</td>
+                                <td>@item.Username</td>
+                                <td>@item.Identificacion</td>
+
+                                <td>
+                                    <div class="ui tiny buttons">
+                                        <a href="@Url.Action("EditarUsuario", new {IdUsuario = item.IdUsuario})" class="ui tiny green icon button">
+                                            <i class="edit icon"></i> Editar
+                                        </a>
+
+                                        <a href="@Url.Action("EliminarUsuario", new {IdUsuario = item.IdUsuario})" class="ui tiny red icon button">
+                                            <i class="trash icon"></i> Eliminar
+                                        </a>
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

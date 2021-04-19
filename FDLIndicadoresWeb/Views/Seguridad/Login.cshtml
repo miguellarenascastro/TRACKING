@@ -1,0 +1,124 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@model AgricolaData.ViewModel.LoginViewModel
+@{
+    
+}
+<style>
+    #main-login {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+    #login-form {
+    max-width: 500px;
+    width: 80%;
+}
+</style>
+    <body>
+        <div id="main-login">
+            @using (Html.BeginForm("Login", "Seguridad", FormMethod.Post, new { @class = "six wide left aligned column", @id = "login-form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @*<div class="ui raised segments">
+                <div class="ui top attached segment center aligned">
+                    <img src="~/Content/Imagenes/LogoInicio-03.jpg" style="max-width: 300%; width: 450px;" />
+                </div>
+                <div class="ui center aligned raised segment">
+                    <div class="ui form">
+
+                        <div class="field">
+                            <label>Usuario</label>
+                            @Html.TextBoxFor(model => model.usuario)
+                            @Html.ValidationMessageFor(model => model.usuario)
+                        </div>
+                        <div class="field">
+                            <label>Contraseña</label>
+                            @Html.PasswordFor(model => model.clave)
+                            @Html.ValidationMessageFor(model => model.clave)
+                        </div>
+
+
+
+
+
+
+                        <div class="field">
+                            <button type="submit" class="ui green icon button">
+                                <i class="lock icon"></i> Iniciar Sesion
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>*@
+
+
+                <div class="ui placeholder segment">
+                    <div class="ui two column very relaxed stackable grid">
+                        <div class="column">
+                            <div class="ui form">
+                                @*<div class="field">
+            <label>Username</label>
+            <div class="ui left icon input">
+                <input type="text" placeholder="Username">
+                <i class="user icon"></i>
+            </div>
+        </div>*@
+                                <div class="field">
+                                    <label>Usuario</label>
+                                    @Html.TextBoxFor(model => model.usuario)
+                                    @Html.ValidationMessageFor(model => model.usuario)
+                                </div>
+
+
+                                @*<div class="field">
+                                    <label>Password</label>
+                                    <div class="ui left icon input">
+                                        <input type="password">
+                                        <i class="lock icon"></i>
+                                    </div>
+                                </div>*@
+
+                                <div class="field">
+                                    <label>Contraseña</label>
+                                    @Html.PasswordFor(model => model.clave)
+                                    @Html.ValidationMessageFor(model => model.clave)
+                                </div>
+
+                                @*<div class="ui blue submit button">Login</div>*@
+                            </div>
+                        </div>
+                        <div class="middle aligned column">
+                             
+                            <div class="field">
+                                <button type="submit" class="ui green icon button">
+                                    <i class="lock icon"></i> Iniciar Sesion
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ui vertical divider">
+                        
+                        
+                    </div>
+                </div>
+
+
+
+
+            }
+
+        </div>
+        <h2> LOGIN</h2>
+    </body>
+
+
+
+
+
