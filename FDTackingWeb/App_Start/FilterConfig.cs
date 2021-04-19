@@ -1,5 +1,5 @@
 ﻿using AgricolaData.Configuration;
-using AgricolaData.Entities;
+using FDLDATA.Entities;
 using AgricolaMVC.Controllers;
 using System.Web;
 using System.Web.Mvc;

@@ -1,18 +1,18 @@
-﻿namespace AgricolaData.Migrations
+﻿namespace FDLDATA.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApoloData.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<FDLDATA.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ApoloData.Context context)
+        protected override void Seed(FDLDATA.Context context)
         {
             //  This method will be called after migrating to the latest version.
 

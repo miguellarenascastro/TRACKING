@@ -1,7 +1,7 @@
 ﻿using Agricola.Seguridad.Entidades;
 using Agricola.Seguridad.Managers;
-using AgricolaData.Entities;
-using AgricolaData.ViewModel;
+using FDLDATA.Entities;
+using FDLDATA.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Extensions.Logging;
@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-
 using System.Web.Optimization;
 using System.Web.Routing;
 
@@ -28,7 +27,7 @@ namespace AgricolaMVC.Controllers
         protected AgricolaSignInManager _signInManager;
         protected AdministradorUsuariosAgricola _userManager;
         protected AgricolaRoleManager _roleManager;
-        ApoloData.Context _context = new ApoloData.Context();
+        FDLDATA.Context _context = new FDLDATA.Context();
 
         public SeguridadController()
         {

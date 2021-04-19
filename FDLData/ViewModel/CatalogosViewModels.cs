@@ -1,5 +1,5 @@
 ﻿using Agricola.Seguridad.Entidades;
-using AgricolaData.Entities;
+using FDLDATA.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AgricolaData.ViewModel
+namespace FDLDATA.ViewModel
 {
     class CatalogosViewModels
     {

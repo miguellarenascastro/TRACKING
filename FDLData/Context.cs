@@ -1,6 +1,6 @@
 ﻿using Agricola.Seguridad;
 using AgricolaData.Configuration;
-using AgricolaData.Entities;
+using FDLDATA.Entities;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApoloData
+namespace FDLDATA
 {
     public class Context : SeguridadDbContext
     {
