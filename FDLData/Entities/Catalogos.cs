@@ -83,7 +83,8 @@ namespace FDLDATA.Entities
         public string DAE { set; get; }
         public string NO_BL { set; get; }
         public string TIPO_CAJA { set; get; }
-        public string TIPO_CARGA_TIPO_CONTENEDOR { set; get; }
+        public string TIPO_CARGA { set; get; }
+        public string TIPO_CONTENEDOR { set; get; }
         public string MARCA { set; get; }
         public int CNTRS { set; get; }
         public int BOXES { set; get; }

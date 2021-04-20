@@ -24,7 +24,7 @@ namespace FDLDATA
         // public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Cat_Usuarios> Cat_Usuarios { get; set; }       
         public virtual DbSet<NombresFilasTrack> NombresFilasTracks { get; set; }
-        public virtual DbSet<ArchivoTracking> Archivos { get; set; }
+        public virtual DbSet<ArchivoTracking> ArchivoTrackings { get; set; }
         public virtual DbSet<FilasTracking> FilasTrackings { get; set; }
 
         public new static Context Create()

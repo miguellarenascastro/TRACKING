@@ -70,7 +70,20 @@ namespace FDLDATA.ViewModel
         public string UserName { set; get; }
     }
 
+    public class ListarArchivoTrackingViewModel
+    {
+        public ListarArchivoTrackingViewModel()
+        {
+            Filas = new List<ItemFilaArchivoViewModel>();
+        }
+        public List<ItemFilaArchivoViewModel> Filas;
+    }
 
+    public class ItemFilaArchivoViewModel
+    {
+        public long? NumFila { set; get; }
+        public string Detalle { set; get; }
+    }
 
 
 }
